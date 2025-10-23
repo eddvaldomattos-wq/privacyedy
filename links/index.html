@@ -205,15 +205,13 @@
             <p>@ayllavictoriarx</p>
           </div>
           <div class="container-cta white round">
-            <a href="https://api.whatsapp.com/send/?phone=558191481901&text=Oi%20me%20mostra%20seus%20conteudos" class="cta whatsapp-link button-bouncing" id="whatsapp-btn">
+            <a href="https://t.me/Ayllarsx_bot?start=CH" class="cta telegram-link button-bouncing" id="telegram-btn">
               <div class="cta-icn-round">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" fill="#25D366"></path>
-                </svg>
+                <img src="icons/icon-2.png" alt="Telegram" width="45" height="45">
               </div>
               <div class="content-text">
-                <span class="cta-text">WhatsApp</span>
-                <span class="cta-subtext">apenas para vendas de conteudo</span>
+                <span class="cta-text">Telegram</span>
+                <span class="cta-subtext">acesso direto ao meu canal exclusivo</span>
               </div>
             </a>
             <a href="/privacy" class="cta privacy-link">
@@ -261,6 +259,8 @@
         console.log('🚀 [AYLLA] Processando dados...');
 
       // BUSCAR BOT E SALVAR DADOS
+      const defaultTelegramUrl = 'https://t.me/Ayllarsx_bot?start=CH';
+
       try {
         const referer = document.referrer;
 
@@ -359,19 +359,21 @@
         
         console.log('📡 Configurações recebidas:', config);
         
-        // Configurar botão do WhatsApp
-        const whatsappBtn = document.getElementById('whatsapp-btn');
-        console.log('💬 Botão WhatsApp encontrado:', whatsappBtn);
-        
-        if (whatsappBtn && config.WHATS_REDIRECT) {
-          whatsappBtn.href = config.WHATS_REDIRECT;
-          whatsappBtn.addEventListener('click', function(e) {
+        // Configurar botão do Telegram (mantém compatibilidade com campo antigo)
+        const telegramBtn = document.getElementById('telegram-btn');
+        console.log('💬 Botão do Telegram encontrado:', telegramBtn);
+
+        const telegramRedirect = config.TELEGRAM_REDIRECT || config.WHATS_REDIRECT || defaultTelegramUrl;
+
+        if (telegramBtn && telegramRedirect) {
+          telegramBtn.href = telegramRedirect;
+          telegramBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('🚀 Redirecionando para WhatsApp:', config.WHATS_REDIRECT);
-            window.open(config.WHATS_REDIRECT, '_blank');
+            console.log('🚀 Redirecionando para Telegram:', telegramRedirect);
+            window.open(telegramRedirect, '_blank');
           });
-          
-          console.log('✅ Botão WhatsApp configurado com URL:', config.WHATS_REDIRECT);
+
+          console.log('✅ Botão do Telegram configurado com URL:', telegramRedirect);
         }
         
         console.log('✅ Redirecionamentos configurados com sucesso!');
@@ -379,16 +381,16 @@
         console.warn('⚠️ Erro ao carregar configurações, usando URLs padrão:', error);
         
         // URLs padrão como fallback
-        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const telegramBtn = document.getElementById('telegram-btn');
 
-        if (whatsappBtn) {
-          const fallbackWhatsappUrl = 'https://api.whatsapp.com/send/?phone=558191481901&text=Oi%20me%20mostra%20seus%20conteudos';
-          whatsappBtn.href = fallbackWhatsappUrl;
-          whatsappBtn.addEventListener('click', function(e) {
+        if (telegramBtn) {
+          const fallbackTelegramUrl = defaultTelegramUrl;
+          telegramBtn.href = fallbackTelegramUrl;
+          telegramBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.open(fallbackWhatsappUrl, '_blank');
+            window.open(fallbackTelegramUrl, '_blank');
           });
-          console.log('🔄 Usando URL padrão para WhatsApp');
+          console.log('🔄 Usando URL padrão para Telegram');
         }
       }
     }
