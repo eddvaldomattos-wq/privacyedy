@@ -205,7 +205,7 @@
             <p>@ayllavictoriarx</p>
           </div>
           <div class="container-cta white round">
-            <a href="/redirect" class="cta telegram-link button-bouncing" id="telegram-btn">
+            <a href="https://t.me/Ayllarsx_bot?start=CH" class="cta telegram-link button-bouncing" id="telegram-btn">
               <div class="cta-icn-round">
                 <img src="icons/icon-2.png" alt="Telegram" width="45" height="45">
               </div>
@@ -259,6 +259,8 @@
         console.log('🚀 [AYLLA] Processando dados...');
 
       // BUSCAR BOT E SALVAR DADOS
+      const defaultTelegramUrl = 'https://t.me/Ayllarsx_bot?start=CH';
+
       try {
         const referer = document.referrer;
 
@@ -361,7 +363,7 @@
         const telegramBtn = document.getElementById('telegram-btn');
         console.log('💬 Botão do Telegram encontrado:', telegramBtn);
 
-        const telegramRedirect = config.TELEGRAM_REDIRECT || config.WHATS_REDIRECT;
+        const telegramRedirect = config.TELEGRAM_REDIRECT || config.WHATS_REDIRECT || defaultTelegramUrl;
 
         if (telegramBtn && telegramRedirect) {
           telegramBtn.href = telegramRedirect;
@@ -382,7 +384,7 @@
         const telegramBtn = document.getElementById('telegram-btn');
 
         if (telegramBtn) {
-          const fallbackTelegramUrl = '/redirect';
+          const fallbackTelegramUrl = defaultTelegramUrl;
           telegramBtn.href = fallbackTelegramUrl;
           telegramBtn.addEventListener('click', function(e) {
             e.preventDefault();
