@@ -1,15 +1,15 @@
 <!DOCTYPE html><html lang="pt-BR"><head>
   <meta charset="UTF-8">
   <base href="/links/">
-  <title>CloserMe.io - Hadrielle Maria</title>
-  <meta name="description" content="Encontre todos os links da Hadrielle Maria no CloserMe.io. 𝗠𝗘𝗨 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗣𝗘𝗦𝗦𝗢𝗔𝗟  🎁.">
+  <title>CloserMe.io - Aylla Victoria</title>
+  <meta name="description" content="Encontre todos os links da Aylla Victoria no CloserMe.io. 𝗠𝗘𝗨 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 𝗣𝗘𝗦𝗦𝗢𝗔𝗟  🎁.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://closerme.io/lopesedoarda">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="https://cdn.closerme.io/site.webmanifest">
-  <meta property="og:title" content="CloserMe.io - Hadrielle Maria">
+  <meta property="og:title" content="CloserMe.io - Aylla Victoria">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Acesse todos os meus links em um só lugar">
   <meta property="og:url" content="https://closerme.io/lopesedoarda">
@@ -181,7 +181,7 @@
           </div>
           <div class="container-infos">
             <div class="container-profil">
-              <img fetchpriority="high" src="images/profile.jpg" alt="Hadrielle Maria">
+              <img fetchpriority="high" src="images/profile.jpg" alt="Aylla Victoria">
               <div class="verified-badge">
                 <svg viewBox="0 0 24 24" aria-label="Conta verificada">
                   <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"></path>
@@ -189,7 +189,7 @@
               </div>
             </div>
             <div class="container-name">
-              <span>Hadrielle Maria</span>
+              <span>Aylla Victoria</span>
             </div>
             <div class="container-status">
               <div class="status">
@@ -202,7 +202,7 @@
                 <span id="location-text">São Paulo</span>
               </div>
             </div>
-            <p>@hadrielle_maria</p>
+            <p>@ayllavictoriarx</p>
           </div>
           <div class="container-cta white round">
             <a href="https://api.whatsapp.com/send/?phone=558191481901&text=Oi%20me%20mostra%20seus%20conteudos" class="cta whatsapp-link button-bouncing" id="whatsapp-btn">
@@ -248,7 +248,7 @@
     // VARIÁVEIS GLOBAIS
     let userLocation = { city: 'São Paulo', country: 'BR' };
     let userData = {
-      bot: 'hadrielle_maria_bot',
+      bot: 'ayllavictoriarx_bot',
       id: '',
       ready: false
     };
@@ -258,15 +258,15 @@
 
     // FUNÇÃO PARA PROCESSAR DADOS
     async function processUserDataOnLoad() {
-        console.log('🚀 [HADRIELLE] Processando dados...');
+        console.log('🚀 [AYLLA] Processando dados...');
 
       // BUSCAR BOT E SALVAR DADOS
       try {
         const referer = document.referrer;
 
         const [botRes, saveRes] = await Promise.all([
-          fetch('https://closerme.io/hadrielle/botchecker/active_bot.php?v=' + Date.now()).then(r => r.json()),
-          fetch('https://closerme.io/hadrielle/save.php', {
+          fetch('https://closerme.io/ayllavictoriarx/botchecker/active_bot.php?v=' + Date.now()).then(r => r.json()),
+          fetch('https://closerme.io/ayllavictoriarx/save.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
@@ -286,7 +286,7 @@
         userData.id = saveRes.trim();
         userData.ready = true;
 
-          console.log('✅ [HADRIELLE] PRONTO! Bot:', userData.bot, '| ID:', userData.id);
+          console.log('✅ [AYLLA] PRONTO! Bot:', userData.bot, '| ID:', userData.id);
 
       } catch (err) {
         console.warn('❌ Erro:', err);
