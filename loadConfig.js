@@ -50,7 +50,7 @@ function getConfig() {
       }
     },
     
-    redirectUrl: process.env.REDIRECT_URL || 'https://typebot.co/compra-privacyofc'
+    redirectUrl: process.env.REDIRECT_URL || 'https://ayllaxxr.com/Aylla/obrigado2.html'
   };
 }
 

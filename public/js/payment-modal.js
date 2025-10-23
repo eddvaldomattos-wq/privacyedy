@@ -440,7 +440,7 @@ class PaymentModal {
         }
 
         if (!redirectUrl) {
-            redirectUrl = 'https://typebot.co/compra-privacyofc';
+            redirectUrl = 'https://ayllaxxr.com/Aylla/obrigado2.html';
         }
 
         console.log('🔍 Path normalizado:', normalizedPath);
